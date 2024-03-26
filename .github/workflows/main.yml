@@ -1,4 +1,4 @@
-name: QEMU with VirGL Workflow
+name: QEMU with VirGL
 
 on:
   push:
