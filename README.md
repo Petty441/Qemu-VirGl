@@ -6,11 +6,8 @@ QEMU with VirGL support is a powerful virtualization solution enabling accelerat
 ## Table of Contents
 
 - [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [Support](#support)
 - [Acknowledgements](#acknowledgements)
 
 ## Features
