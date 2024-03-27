@@ -37,11 +37,11 @@ jobs:
         response=$(curl \
           --request POST \
           --url https://api.github.com/repos/${{ github.repository }}/releases \
-          --header 'authorization: Bearer ${{ secrets.QEMU_TOKEN }}' \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'content-type: application/json' \
           --data '{
-            "tag_name": "v1.0",
-            "name": "Qemu-VirGL v1.0",
+            "tag_name": "v1.0.0",
+            "name": "Release v1.0.0",
             "body": "$RELEASE_NOTES",
             "draft": false,
             "prerelease": false
@@ -54,7 +54,7 @@ jobs:
         curl \
           --request POST \
           --url "https://uploads.github.com/repos/${{ github.repository }}/releases/${{ steps.create_release.outputs.id }}/assets?name=qemu_binary" \
-          --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          --header "authorization: Bearer ${{ secrets.QEMU_TOKEN }}" \
           --header 'content-type: application/octet-stream' \
-          --data-binary @qemu/build/qemu_binary
+          --data-binary @qemu/build/x86_64-softmmu/qemu-system-x86_64
           
